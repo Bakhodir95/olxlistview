@@ -6,31 +6,29 @@ class MainFirstpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        child: ListView(children: [
-          for (var i = 0; i < 4; i++)
-            Gallery(
-                "kamaz", "Universal pult", "Yangi", "Tahskent, Uchtepa", "5000")
-        ]),
-      ),
+      child: ListView(children: [
+        for (var i = 0; i < 4; i++)
+          Galler(
+              "kamaz", "Universal pult", "Yangi", "Tahskent, Uchtepa", "5000")
+      ]),
     );
   }
 }
 
-class Gallery extends StatefulWidget {
+class Galler extends StatefulWidget {
   String image;
   String text1;
   String position;
   String city;
   String price;
 
-  Gallery(this.image, this.text1, this.position, this.city, this.price);
+  Galler(this.image, this.text1, this.position, this.city, this.price);
 
   @override
-  State<Gallery> createState() => _GalleryState();
+  State<Galler> createState() => _GalleryState();
 }
 
-class _GalleryState extends State<Gallery> {
+class _GalleryState extends State<Galler> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -40,34 +38,35 @@ class _GalleryState extends State<Gallery> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              clipBehavior: Clip.hardEdge,
-              width: double.infinity,
-              height: screenHeight / 4,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    topLeft: Radius.circular(10)),
-                image: DecorationImage(
-                    image: AssetImage(
-                      "images/${widget.image}.png",
-                    ),
-                    fit: BoxFit.cover),
-              ),
-              alignment: Alignment.bottomLeft,
+            Expanded(
               child: Container(
-                padding: EdgeInsets.all(15),
-                width: 70,
-                height: 50,
+                clipBehavior: Clip.hardEdge,
+                width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.only(topRight: Radius.circular(10)),
-                  color: Color.fromARGB(255, 60, 237, 154),
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      topLeft: Radius.circular(10)),
+                  image: DecorationImage(
+                      image: AssetImage(
+                        "images/${widget.image}.png",
+                      ),
+                      fit: BoxFit.cover),
                 ),
-                child: Text(
-                  "TOP",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                alignment: Alignment.bottomLeft,
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  width: 70,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.only(topRight: Radius.circular(10)),
+                    color: Color.fromARGB(255, 60, 237, 154),
+                  ),
+                  child: Text(
+                    "TOP",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),

@@ -9,7 +9,7 @@ class MainFirstpage extends StatelessWidget {
       child: Container(
         child: ListView(children: [
           for (var i = 0; i < 4; i++)
-            Gallery(
+            Galler2(
                 "kamaz", "Universal pult", "Yangi", "Tahskent, Uchtepa", "5000")
         ]),
       ),
@@ -17,20 +17,20 @@ class MainFirstpage extends StatelessWidget {
   }
 }
 
-class Gallery extends StatefulWidget {
+class Galler2 extends StatefulWidget {
   String image;
   String text1;
   String position;
   String city;
   String price;
 
-  Gallery(this.image, this.text1, this.position, this.city, this.price);
+  Galler2(this.image, this.text1, this.position, this.city, this.price);
 
   @override
-  State<Gallery> createState() => _GalleryState();
+  State<Galler2> createState() => _GalleryState();
 }
 
-class _GalleryState extends State<Gallery> {
+class _GalleryState extends State<Galler2> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -43,7 +43,6 @@ class _GalleryState extends State<Gallery> {
             Container(
               clipBehavior: Clip.hardEdge,
               width: double.infinity,
-              height: screenHeight / 4,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(10),

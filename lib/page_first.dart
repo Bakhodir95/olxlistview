@@ -9,9 +9,7 @@ class PageFirst extends StatefulWidget {
 }
 
 class _PageFirstState extends State<PageFirst> {
-  List screens = [
-    MainFirstpage(),
-  ];
+  List screens = [MainFirstpage(), Plitka(), Spiska()];
   int currenIndex = 0;
 
   @override
@@ -36,11 +34,11 @@ class _PageFirstState extends State<PageFirst> {
                 ),
                 const PopupMenuItem(
                   child: Text('Spiska'),
-                  value: 1,
+                  value: 2,
                 ),
                 const PopupMenuItem(
                   child: Text('Plitka'),
-                  value: 2,
+                  value: 1,
                 ),
               ];
             },
